@@ -69,3 +69,5 @@ Bal sors akit régen tép,
 Hozz rá víg esztendőt,
 Megbünhödte már e nép
 A multat s jövendőt!
+
+elon maszk
