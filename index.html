@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarX - Autókeresés és Tapasztalatmegosztás</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-4">
+        <h1>CarX</h1>
+        <p>Ossza meg tapasztalatait!</p>
+        <form class="form-inline justify-content-center mt-3" onsubmit="return searchCars(event)">
+            <input id="searchInput" class="form-control mr-2" type="search" placeholder="Autó keresése" aria-label="Search">
+            <button class="btn btn-light" type="submit">Keresés</button>
+        </form>
+    </header>
+
+    <div class="container mt-4">
+        <div class="row" id="carList">
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Toyota Corolla">
+                    <div class="card-body">
+                        <h5 class="card-title">Toyota Corolla (2020)</h5>
+                        <button class="btn btn-info" onclick="openModal('Toyota Corolla')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Honda Civic">
+                    <div class="card-body">
+                        <h5 class="card-title">Honda Civic (2021)</h5>
+                        <button class="btn btn-info" onclick="openModal('Honda Civic')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Ford Focus">
+                    <div class="card-body">
+                        <h5 class="card-title">Ford Focus (2019)</h5>
+                        <button class="btn btn-info" onclick="openModal('Ford Focus')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Volkswagen Golf">
+                    <div class="card-body">
+                        <h5 class="card-title">Volkswagen Golf (2018)</h5>
+                        <button class="btn btn-info" onclick="openModal('Volkswagen Golf')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Mazda 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Mazda 3 (2022)</h5>
+                        <button class="btn btn-info" onclick="openModal('Mazda 3')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Nissan Sentra">
+                    <div class="card-body">
+                        <h5 class="card-title">Nissan Sentra (2020)</h5>
+                        <button class="btn btn-info" onclick="openModal('Nissan Sentra')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Hyundai Elantra">
+                    <div class="card-body">
+                        <h5 class="card-title">Hyundai Elantra (2021)</h5>
+                        <button class="btn btn-info" onclick="openModal('Hyundai Elantra')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Chevrolet Malibu">
+                    <div class="card-body">
+                        <h5 class="card-title">Chevrolet Malibu (2019)</h5>
+                        <button class="btn btn-info" onclick="openModal('Chevrolet Malibu')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Subaru Impreza">
+                    <div class="card-body">
+                        <h5 class="card-title">Subaru Impreza (2022)</h5>
+                        <button class="btn btn-info" onclick="openModal('Subaru Impreza')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Toyota Corolla">
+                    <div class="card-body">
+                        <h5 class="card-title">Toyota Corolla (2020)</h5>
+                        <button class="btn btn-info" onclick="openModal('Toyota Corolla')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Honda Civic">
+                    <div class="card-body">
+                        <h5 class="card-title">Honda Civic (2021)</h5>
+                        <button class="btn btn-info" onclick="openModal('Honda Civic')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Ford Focus">
+                    <div class="card-body">
+                        <h5 class="card-title">Ford Focus (2019)</h5>
+                        <button class="btn btn-info" onclick="openModal('Ford Focus')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Volkswagen Golf">
+                    <div class="card-body">
+                        <h5 class="card-title">Volkswagen Golf (2018)</h5>
+                        <button class="btn btn-info" onclick="openModal('Volkswagen Golf')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Mazda 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Mazda 3 (2022)</h5>
+                        <button class="btn btn-info" onclick="openModal('Mazda 3')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Nissan Sentra">
+                    <div class="card-body">
+                        <h5 class="card-title">Nissan Sentra (2020)</h5>
+                        <button class="btn btn-info" onclick="openModal('Nissan Sentra')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Hyundai Elantra">
+                    <div class="card-body">
+                        <h5 class="card-title">Hyundai Elantra (2021)</h5>
+                        <button class="btn btn-info" onclick="openModal('Hyundai Elantra')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Chevrolet Malibu">
+                    <div class="card-body">
+                        <h5 class="card-title">Chevrolet Malibu (2019)</h5>
+                        <button class="btn btn-info" onclick="openModal('Chevrolet Malibu')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 car-item mb-4">
+                <div class="card bg-secondary text-white shadow-sm border-light">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="BMW m3">
+                    <div class="card-body">
+                        <h5 class="card-title">BMW m3 (2022)</h5>
+                        <button class="btn btn-info" onclick="openModal('BMW m3')">Hozzászólás</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modális ablak -->
+    <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="commentModalLabel">Hozzászólás az <span id="carName"></span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <textarea id="commentText" class="form-control" rows="5" placeholder="Írja be a hozzászólását..."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Mégse</button>
+                    <button type="button" class="btn btn-primary" onclick="submitComment()">Küldés</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2024 CarX. Minden jog fenntartva.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function searchCars(event) {
+            event.preventDefault();
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const carItems = document.querySelectorAll('.car-item');
+
+            carItems.forEach(item => {
+                const carTitle = item.querySelector('.card-title').textContent.toLowerCase();
+                item.style.display = carTitle.includes(searchInput) ? 'block' : 'none';
+            });
+        }
+
+        function openModal(carName) {
+            document.getElementById('carName').textContent = carName;
+            $('#commentModal').modal('show');
+        }
+
+        function submitComment() {
+            const comment = document.getElementById('commentText').value;
+            alert(`Hozzászólás elküldve: ${comment}`);
+            document.getElementById('commentText').value = ''; // Töröljük a szöveget
+            $('#commentModal').modal('hide');
+        }
+    </script>
+</body>
+</html>
